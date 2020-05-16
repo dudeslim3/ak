@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+Enter Amount: <input type="text" id="demo"></br>
+<input type="button" value="withdraw" onclick="user1.withdraw()">
+<input type="button" value="deposite" onclick="user1.deposite()">
+<input  type="button"value="show" onclick="user1.show()">
+
+
+<h1 id="gk"></h1>
+<script> 
+
+class account
+{
+
+constructor(name,balance)
+{
+this.name=name;
+this.balance=balance;
+}
+deposite()
+{
+	var depo=document.getElementById("demo").value;
+this.balance=this.balance+ Number(depo);
+}
+
+ display()
+{
+  return this.name + this.balance;
+}
+
+}
+
+class currentaccount extends account
+{
+constructor(name,balance)
+
+{
+super(name,balance);
+}
+
+withdraw()
+{
+	var amt=document.getElementById("demo").value;
+    this.balance=this.balance-amt;
+}
+show ()
+{
+	document.getElementById("gk").innerHTML=this.display();
+}
+
+}
+
+user1=new currentaccount("ganesh",10000);
+/*user1.deposite(5000);
+user1.withdraw(2000)
+document.write(user1.display());*/
+
+</script>
+</body>
+</html>
