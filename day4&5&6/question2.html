@@ -1,0 +1,59 @@
+<html>
+<body>
+
+<form name="myform" onsubmit="return validateForm()">
+<label>Username</label><br/>
+<input type="email" name="email" /><br/> 
+<label>password</label><br/>
+<input type="password" name="pas" /><br/> 
+<label>Mobile Number</label><br/>
+<input type="number" name="mob" /><br/> 
+<label>Adress</label><br/>
+
+<textarea id="address" rows="5" cols="50">
+</textarea>
+<br/>
+<label>Age</label><br/>
+<input type="number" name="age" /><br/>
+<input type="submit"/>
+</form>
+
+
+<script>
+
+function validateForm() {
+  var x = document.forms["myform"]["email"].value;
+  var pw= document.forms["myform"]["pas"].value;
+ var mob =document.forms["myform"]["mob"].value;
+ var age =document.forms["myform"]["age"].value;
+ var len=x.length;
+ var lenpw=pw.length;
+  var lenmob=mob.length;
+  var numage= Number(age);
+  if (x == "" ) {
+    alert("Name must be filled out");
+    return false;
+  }
+  if (len<2||len>16) {
+    alert("userName must min 8 and max 15 character long");
+    return false;
+  }
+   if (lenpw<8) {
+    alert("password must be atleast 8 char long");
+    return false;
+  }
+  
+   if (lenmob!=10) {
+    alert("Mob no should be 10 digit long");
+    return false;
+  }
+  
+  if (numage<17 || numage>100) {
+    alert("age should be from 18-100 years");
+    return false;
+  }
+}
+
+</script>
+</body>
+</html>
