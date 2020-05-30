@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Ganesh_kulkarni</title>
+</head>
+<body>
+
+<p> My name is ganesh</p>
+<p> I am from latur</p>
+<p> I love swimming</p>
+
+<h2 id="demo"></h2>
+
+<input type="button" value = "click !" onclick="fun()">
+	
+	<script type="text/javascript">
+
+		function fun()
+		{
+			var x=document.getElementsByTagName("p");
+			document.getElementById("demo").innerHTML=x.length+" 'P Tag Element in Document'";
+			
+			for(var i=0; i<x.length; i++)
+			{
+			 x[i].style.background="blue";
+			}
+		}
+		
+	</script>
+</body>
+</html>
